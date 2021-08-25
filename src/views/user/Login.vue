@@ -44,7 +44,7 @@
   </div>
 </template>
 
-<script lang="ts" setup >
+<script lang="ts" setup>
 import { reactive, ref } from 'vue';
 import { UserOutlined, LockOutlined } from '@ant-design/icons-vue';
 
