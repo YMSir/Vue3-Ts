@@ -4,7 +4,7 @@
       <a-form-item>
         <a-input v-model:value="userInfo.username" size="large">
           <template #prefix>
-            <UserOutlined class="icon" />
+            <UserOutlined class="icon"/>
           </template>
         </a-input>
       </a-form-item>
@@ -12,7 +12,7 @@
       <a-form-item>
         <a-input-password v-model:value="userInfo.password" size="large">
           <template #prefix>
-            <LockOutlined class="icon" />
+            <LockOutlined class="icon"/>
           </template>
         </a-input-password>
       </a-form-item>
@@ -51,6 +51,15 @@ function handleSubmit (e: Event) {
   console.log(e);
   e.preventDefault();
   isLogin.value = true;
+
+  fetch('/api/user/token')
+    .then(res => {
+      console.log(res);
+      return res.json();
+    })
+    .then(res => {
+      console.log(res);
+    });
 
   setTimeout(() => {
     isLogin.value = false;
