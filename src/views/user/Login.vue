@@ -1,47 +1,33 @@
 <template>
-  <div class="container">
-    <div class="top">
-      <div class="header">
-        Vue3 + Vite + Ts + Ant
-      </div>
+  <div class="main">
+    <a-form :model="userInfo" @submit="handleSubmit">
+      <a-form-item>
+        <a-input v-model:value="userInfo.username" size="large">
+          <template #prefix>
+            <UserOutlined class="icon" />
+          </template>
+        </a-input>
+      </a-form-item>
 
-      <div class="desc">
-        This is a Vue3 Composition API project.
-      </div>
-    </div>
+      <a-form-item>
+        <a-input-password v-model:value="userInfo.password" size="large">
+          <template #prefix>
+            <LockOutlined class="icon" />
+          </template>
+        </a-input-password>
+      </a-form-item>
 
-    <div class="main">
-      <a-form :model="userInfo" @submit="handleSubmit">
-        <a-form-item>
-          <a-input v-model:value="userInfo.username" size="large">
-            <template #prefix>
-              <user-outlined class="icon"/>
-            </template>
-          </a-input>
-        </a-form-item>
-
-        <a-form-item>
-          <a-input-password v-model:value="userInfo.password" size="large">
-            <template #prefix>
-              <lock-outlined class="icon"/>
-            </template>
-          </a-input-password>
-        </a-form-item>
-
-        <a-form-item>
-          <a-button
-            :loading="isLogin"
-            class="login-btn"
-            ghost
-            html-type="submit"
-            size="large"
-            type="primary"
-          >
-            登 录
-          </a-button>
-        </a-form-item>
-      </a-form>
-    </div>
+      <a-form-item>
+        <a-button
+          :loading="isLogin"
+          class="login-btn"
+          html-type="submit"
+          size="large"
+        >
+          登 录
+        </a-button>
+      </a-form-item>
+    </a-form>
   </div>
 </template>
 
@@ -72,6 +58,6 @@ function handleSubmit (e: Event) {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 @import './Login.scss';
 </style>

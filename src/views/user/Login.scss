@@ -1,40 +1,14 @@
-.container {
-  padding: 110px 0 144px;
-  min-height: 100%;
-  background: url("../../images/user/background.png") no-repeat;
-  background-size: cover;
 
-  .top {
-    text-align: center;
+.main {
+  margin: 0 auto;
+  min-width: 260px;
+  width: 368px;
 
-    .header {
-      height: 44px;
-      line-height: 44px;
-      color: rgba(0, 0, 0, .85);
-      font-weight: 600;
-      font-size: 33px;
-      font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
-    }
-
-    .desc {
-      margin-top: 12px;
-      margin-bottom: 40px;
-      color: rgba(0, 0, 0, .45);
-      font-size: 14px;
-    }
+  .icon {
+    color: #1890ff;
   }
 
-  .main {
-    width: 368px;
-    min-width: 260px;
-    margin: 0 auto;
-
-    .icon {
-      color: #1890ff;
-    }
-
-    .login-btn {
-      width: 100%;
-    }
+  .login-btn {
+    width: 100%;
   }
 }
