@@ -15,7 +15,7 @@
         <a-form-item>
           <a-input v-model:value="userInfo.username" size="large">
             <template #prefix>
-              <user-outlined class="icon" />
+              <user-outlined class="icon"/>
             </template>
           </a-input>
         </a-form-item>
@@ -23,7 +23,7 @@
         <a-form-item>
           <a-input-password v-model:value="userInfo.password" size="large">
             <template #prefix>
-              <lock-outlined class="icon" />
+              <lock-outlined class="icon"/>
             </template>
           </a-input-password>
         </a-form-item>
@@ -36,7 +36,8 @@
             html-type="submit"
             size="large"
             type="primary"
-          >登 录
+          >
+            登 录
           </a-button>
         </a-form-item>
       </a-form>
