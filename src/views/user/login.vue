@@ -64,5 +64,5 @@ function handleSubmit (e: Event) {
 </script>
 
 <style lang="scss" scoped>
-@import './Login.scss';
+@import 'login';
 </style>

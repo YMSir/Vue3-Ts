@@ -3,7 +3,8 @@
  * @file: http
  */
 
-import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
+import axios from 'axios';
+import type { AxiosRequestConfig, AxiosResponse } from 'axios';
 
 const http = axios.create({
   // baseURL: NODE_ENV.BASE_URL
@@ -20,8 +21,8 @@ http.interceptors.request.use(
 );
 
 http.interceptors.response.use(
-  (config: AxiosResponse<any>) => {
-    return config;
+  (res: AxiosResponse<any>) => {
+    return res.data;
   },
 
   error => {
