@@ -8,18 +8,30 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes: [
     {
+      path: '/',
+      redirect: '/user'
+    },
+    {
       path: '/user',
+      name: 'User',
       component: () => import('@/layout/UserLayout/index.vue'),
       children: [
         {
+          path: '',
+          redirect: { name: 'Login' }
+        },
+        {
           path: 'login',
+          name: 'Login',
           component: () => import('@/views/user/Login.vue')
         }
       ]
     },
     {
-      path: '/(*)',
-      redirect: '/user/login'
+      // vue2 *
+      path: '/:catchAll(.*)',
+      name: '404',
+      component: () => import('@/views/404/index.vue')
     }
   ]
 });

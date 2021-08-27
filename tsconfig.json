@@ -12,7 +12,6 @@
       "esnext",
       "dom"
     ],
-    "isolatedModules": true,
     "types": [
       "vite/client"
     ]

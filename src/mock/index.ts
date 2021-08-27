@@ -7,13 +7,14 @@ export default [
   {
     url: `/api/user/token`,
     method: 'get',
-    response: ({ body }) => {
+    response: ({ body }: { body: object }) => {
       console.log('body>>>>>', body);
       return {
         code: 0,
         message: 'ok',
-        data: 'this is a token.'
+        data: [ 'this is a token.' ]
       };
     }
   }
-];
+]
+;

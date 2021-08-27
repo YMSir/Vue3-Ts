@@ -2,13 +2,14 @@
   "name": "vue-next-ts",
   "version": "0.0.0",
   "scripts": {
-    "dev": "cross-env vite",
+    "dev": "cross-env NODE_ENV=development vite",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview"
   },
   "dependencies": {
     "@types/node": "^16.7.2",
     "ant-design-vue": "^2.2.6",
+    "axios": "^0.21.1",
     "element-plus": "^1.1.0-beta.5",
     "mockjs": "^1.1.0",
     "vue": "^3.2.6",

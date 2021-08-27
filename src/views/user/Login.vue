@@ -4,7 +4,7 @@
       <a-form-item>
         <a-input v-model:value="userInfo.username" size="large">
           <template #prefix>
-            <UserOutlined class="icon"/>
+            <UserOutlined class="icon" />
           </template>
         </a-input>
       </a-form-item>
@@ -12,7 +12,7 @@
       <a-form-item>
         <a-input-password v-model:value="userInfo.password" size="large">
           <template #prefix>
-            <LockOutlined class="icon"/>
+            <LockOutlined class="icon" />
           </template>
         </a-input-password>
       </a-form-item>
@@ -34,6 +34,7 @@
 <script lang="ts" setup>
 import { reactive, ref } from 'vue';
 import { UserOutlined, LockOutlined } from '@ant-design/icons-vue';
+import { getToken } from '@/api/user';
 
 type UserInfo = {
   username: string,
@@ -52,14 +53,9 @@ function handleSubmit (e: Event) {
   e.preventDefault();
   isLogin.value = true;
 
-  fetch('/api/user/token')
-    .then(res => {
-      console.log(res);
-      return res.json();
-    })
-    .then(res => {
-      console.log(res);
-    });
+  getToken().then(res => {
+    console.log(res);
+  });
 
   setTimeout(() => {
     isLogin.value = false;
