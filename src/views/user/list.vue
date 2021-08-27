@@ -1,6 +1,6 @@
 <template>
   <h3>user list</h3>
-  <ul>
+  <ul class="list">
     <li v-for="user in userList" :key="user.id">
       <h3>name: {{ user.name }}</h3>
       <h5>age: {{ user.age }}</h5>
@@ -14,13 +14,14 @@
 import { ref } from 'vue';
 import { getToken } from '@/api/user';
 
-// console.log(await getToken());
-const userList = ref([]);
-userList.value = (await getToken()).data;
-console.log(userList.value);
-
+const userList = ref<User[]>([]);
+getToken().then(res => {
+  userList.value = res.data.array;
+  console.log(res.data.array);
+  console.log(userList.value);
+});
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+@import "list";
 </style>

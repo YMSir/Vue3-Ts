@@ -3,7 +3,6 @@
  * @file: user.d.ts
  */
 
-
 declare type User = {
   id: string,
   name: string,
