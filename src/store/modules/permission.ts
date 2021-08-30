@@ -4,6 +4,8 @@
  */
 
 export default {
+  namespaced:true,
+
   state: {
     counter: 0
   },

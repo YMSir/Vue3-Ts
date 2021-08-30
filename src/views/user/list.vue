@@ -1,5 +1,6 @@
 <template>
   <h3>user list</h3>
+  <p>{{ $store }}</p>
   <ul class="list">
     <li
       v-for="user in userList"
