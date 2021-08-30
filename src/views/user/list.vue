@@ -1,7 +1,10 @@
 <template>
   <h3>user list</h3>
   <ul class="list">
-    <li v-for="user in userList" :key="user.id">
+    <li
+      v-for="user in userList"
+      :key="user.id"
+    >
       <h3>name: {{ user.name }}</h3>
       <h5>age: {{ user.age }}</h5>
       <h5>addr: {{ user.addr }}</h5>
@@ -12,16 +15,19 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import { getToken } from '@/api/user';
+import { getUserList } from '@/api/user';
 
-const userList = ref<User[]>([]);
-getToken().then(res => {
-  userList.value = res.data.array;
-  console.log(res.data.array);
-  console.log(userList.value);
+defineProps({
+  title: {
+    type: String,
+    default: 'this is a title.'
+  }
 });
+
+const res = await getUserList();
+const userList = ref<User[]>(res.data);
 </script>
 
 <style lang="scss" scoped>
-@import "list";
+@import './list.scss';
 </style>

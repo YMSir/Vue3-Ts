@@ -14,11 +14,15 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/": [
-        "src/"
+      "@/*": [
+        "src/*"
+      ],
+      "#/*": [
+        "types/*"
       ]
     },
     "types": [
+      "node",
       "vite/client"
     ],
     "typeRoots": [
@@ -30,6 +34,9 @@
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "mock/**/*.ts",
+    "mock/**/*.d.ts",
+    "types/**/*.d.ts"
   ]
 }

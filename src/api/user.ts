@@ -10,3 +10,10 @@ export const getToken = () =>
     method: 'get',
     url: `/api/user/token`
   });
+
+
+  export const getUserList = () => 
+    http({
+      method: 'get',
+      url:`/api/user/list`
+})

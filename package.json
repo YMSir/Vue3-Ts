@@ -2,7 +2,8 @@
   "name": "vue-next-ts",
   "version": "1.0.0",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development vite",
+    "dev":"vite --open --port 9089",
+    "mock": "cross-env NODE_ENV=development vite --open --port 9090",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview"
   },

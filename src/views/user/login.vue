@@ -35,6 +35,7 @@
 import { reactive, ref } from 'vue';
 import { UserOutlined, LockOutlined } from '@ant-design/icons-vue';
 import { getToken } from '@/api/user';
+import { useRouter } from 'vue-router';
 
 type UserInfo = {
   username: string,
@@ -47,6 +48,7 @@ const userInfo: UserInfo = reactive({
 });
 
 const isLogin = ref(false);
+const router = useRouter();
 
 function handleSubmit (e: Event) {
   console.log(e);
@@ -55,11 +57,9 @@ function handleSubmit (e: Event) {
 
   getToken().then(res => {
     console.log(res);
-  });
-
-  setTimeout(() => {
     isLogin.value = false;
-  }, 1500);
+    router.replace('/user/list');
+  });
 }
 </script>
 

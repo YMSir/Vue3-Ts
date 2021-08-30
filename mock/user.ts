@@ -31,11 +31,18 @@ export default [
       return {
         code: 0,
         message: 'ok',
-        data: mock({
-          'array|1-110': [
-            genUserList
-          ]
-        })
+        data: Random.guid()
+      };
+    }
+  },
+  {
+    url: `/api/user/list`,
+    method: 'get',
+    response: () => {
+      return {
+        code: 0,
+        message: 'ok',
+        data: mock({ 'list|1-110': [ genUserList ] }).list
       };
     }
   }
