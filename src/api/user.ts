@@ -11,9 +11,8 @@ export const getToken = () =>
     url: `/api/user/token`
   });
 
-
-  export const getUserList = () => 
-    http({
-      method: 'get',
-      url:`/api/user/list`
-})
+export const getUserList = () =>
+  http({
+    method: 'get',
+    url: `/api/user/list`
+  });
