@@ -1,6 +1,6 @@
 <template>
   <h3>user list</h3>
-  <p>{{ $store }}</p>
+  <p>{{ $store.state.permission.counter }}</p>
   <ul class="list">
     <li
       v-for="user in userList"
@@ -17,6 +17,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import { getUserList } from '@/api/user';
+import { useStore } from 'vuex';
 
 defineProps({
   title: {
@@ -27,6 +28,10 @@ defineProps({
 
 const res = await getUserList();
 const userList = ref<User[]>(res.data);
+
+const store = useStore();
+console.log(store.state.value);
+console.log(store);
 </script>
 
 <style lang="scss" scoped>

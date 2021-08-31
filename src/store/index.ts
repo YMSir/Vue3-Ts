@@ -2,9 +2,10 @@
  * Created by Yes.Man on 2021/8/30 16:15.
  * @file: store
  */
-import { createStore } from 'vuex';
+import { createStore, Store } from 'vuex';
 import getters from './getters';
 import type { ModuleTree } from 'vuex';
+import { InjectionKey } from 'vue';
 
 const files = import.meta.glob('./modules/*.ts');
 const modules: ModuleTree<string> = {};
@@ -17,7 +18,4 @@ for (const path in files) {
   });
 }
 
-export default createStore({
-  modules,
-  getters
-});
+export default createStore({ modules, getters });

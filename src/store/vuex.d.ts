@@ -3,17 +3,27 @@
  * @file: vuex.d
  */
 
-import { ComponentCustomProperties } from 'vue'
-import { Store } from 'vuex'
+import { ComponentCustomProperties, InjectionKey } from 'vue';
+import { Store } from 'vuex';
 
+// 模块扩展
 declare module '@vue/runtime-core' {
   // 声明自己的 store state
   interface State {
-    count: number
+    permission: {
+      counter: number
+    };
   }
 
   // 为 `this.$store` 提供类型声明
   interface ComponentCustomProperties {
-    $store: Store<State>
+    $store: Store<State>;
   }
 }
+
+export interface State {
+
+}
+
+export const key: InjectionKey<Store<State
+>>= Symbol();
