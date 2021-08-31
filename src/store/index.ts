@@ -19,3 +19,9 @@ for (const path in files) {
 }
 
 export default createStore({ modules, getters });
+
+
+export interface State {
+
+}
+export const key: InjectionKey<Store<State>> = Symbol();
