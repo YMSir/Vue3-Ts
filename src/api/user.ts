@@ -8,11 +8,11 @@ import http from '../utils/http';
 export const getToken = () =>
   http({
     method: 'get',
-    url: `/api/user/token`
+    url: `/user/token`
   });
 
 export const getUserList = () =>
   http({
     method: 'get',
-    url: `/api/user/list`
+    url: `/user/list`
   });

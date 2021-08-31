@@ -24,5 +24,18 @@ export default defineConfig({
   },
   build: {
     outDir: 'app'
+  },
+  server: {
+    open: true,
+    port: 9090,
+    host: '0.0.0.0',
+    proxy: {
+      '/api': {
+        changeOrigin: true,
+        // target: 'https://www.baidu.com',
+        target: 'http://127.0.0.1:9090',
+        rewrite: path => path.replace(/^\/api/, '')
+      }
+    }
   }
 });

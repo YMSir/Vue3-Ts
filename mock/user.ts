@@ -25,7 +25,7 @@ const genUserList = (): User => {
 
 export default [
   {
-    url: `/api/user/token`,
+    url: `/user/token`,
     method: 'get',
     response: () => {
       return {
@@ -36,7 +36,7 @@ export default [
     }
   },
   {
-    url: `/api/user/list`,
+    url: `/user/list`,
     method: 'get',
     response: () => {
       return {

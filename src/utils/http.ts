@@ -7,7 +7,8 @@ import axios from 'axios';
 import type { AxiosRequestConfig, AxiosResponse } from 'axios';
 
 const http = axios.create({
-  // baseURL: NODE_ENV.BASE_URL
+  baseURL: import.meta.env.VITE_BASE_URL,
+  timeout: 6 * 1000
 });
 
 http.interceptors.request.use(
