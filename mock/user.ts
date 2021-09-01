@@ -42,7 +42,22 @@ export default [
       return {
         code: 0,
         message: 'ok',
-        data: mock({ 'list|1-110': [ genUserList ] }).list
+        // data: mock({ 'list|1-110': [ genUserList ] }).list
+        data: mock({
+          'list|1-110': [
+            {
+              addr: Random.county(true),
+              age: 12,
+              birth: 32,
+              email: Random.email(),
+              guid: Random.guid(),
+              id: Random.id(),
+              married: Random.boolean(),
+              name: '@cname()',
+              title: Random.ctitle()
+            }
+          ]
+        }).list
       };
     }
   }
