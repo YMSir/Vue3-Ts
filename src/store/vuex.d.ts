@@ -20,10 +20,3 @@ declare module '@vue/runtime-core' {
     $store: Store<State>;
   }
 }
-
-export interface State {
-
-}
-
-export const key: InjectionKey<Store<State
->>= Symbol();
