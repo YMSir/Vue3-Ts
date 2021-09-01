@@ -33,6 +33,11 @@ const router = createRouter({
       ]
     },
     {
+      path: '/threejs',
+      name: 'ThreeJs',
+      component: () => import('@/views/threejs/index.vue')
+    },
+    {
       // vue2 *
       path: '/:catchAll(.*)',
       name: '404',
