@@ -7,7 +7,7 @@ import getters from './getters';
 import type { ModuleTree } from 'vuex';
 import { InjectionKey } from 'vue';
 
-const files = import.meta.globEager('./modules/**/*.ts');
+const files = import.meta.globEager('./modules/*.ts');
 const modules: ModuleTree<string> = {};
 
 for (const path in files) {
