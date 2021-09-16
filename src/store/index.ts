@@ -7,21 +7,19 @@ import getters from './getters';
 import type { ModuleTree } from 'vuex';
 import { InjectionKey } from 'vue';
 
-const files = import.meta.glob('./modules/*.ts');
+const files = import.meta.globEager('./modules/**/*.ts');
 const modules: ModuleTree<string> = {};
 
 for (const path in files) {
-  files[path]().then(mod => {
-    if (/^\.\/modules\/(.*)\.ts$/.test(path)) {
-      modules[RegExp.$1] = mod.default;
-    }
-  });
+  if (/^\.\/modules\/(.*)\.ts$/.test(path)) {
+    modules[RegExp.$1] = files[path].default;
+  }
 }
 
 export default createStore({ modules, getters });
 
-
 export interface State {
 
 }
+
 export const key: InjectionKey<Store<State>> = Symbol();
