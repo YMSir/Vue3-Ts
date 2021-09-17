@@ -7,12 +7,12 @@ import getters from './getters';
 import type { ModuleTree } from 'vuex';
 import { InjectionKey } from 'vue';
 
-const files = import.meta.globEager('./modules/*.ts');
+const dirs = import.meta.globEager('./modules/*.ts');
 const modules: ModuleTree<string> = {};
 
-for (const path in files) {
-  if (/^\.\/modules\/(.*)\.ts$/.test(path)) {
-    modules[RegExp.$1] = files[path].default;
+for (const dir in dirs) {
+  if (/^\.\/modules\/(.*)\.ts$/.test(dir)) {
+    modules[RegExp.$1] = dirs[dir].default;
   }
 }
 
